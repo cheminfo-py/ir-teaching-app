@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>IRCalc: Making molecules vibrate</title>
+    <meta name="description" content="This website allows to predict and interactively analyze IR spectra.">
+    <meta name="keyword" content="IR, spectroscopy, xtb">
+    <script
+      data-main="visualizer/src/init"
+      src="visualizer/src/components/requirejs/require.js"
+    ></script>
+    <style>
+      #ci-visualizer {
+        min-height: 100vh;
+
+      body {
+        margin: 0;
+      }
+    </style>
+    <script>
+      /*
+       * Do not remove. This is to make sure bluebird is correctly loaded
+       * for browsers that don't have the Promise global.
+       */
+      window.Promise = undefined;
+    </script>
+  </head>
+  <body>
+    <div
+      id="ci-visualizer"
+      data-ci-viewxx="./visualizer/view.json"
+      data-ci-view="https://couch.cheminfo.org/cheminfo-public/230d2530cee8782b3cb63dc4e25931d9/view.json"
+      data-ci-config="./visualizer/config.json"
+    ></div>
+  </body>
+</html>
