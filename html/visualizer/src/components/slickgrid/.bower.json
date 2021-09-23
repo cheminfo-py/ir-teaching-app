@@ -1,0 +1,12 @@
+{
+  "name": "slickgrid",
+  "homepage": "https://github.com/cheminfo/SlickGrid",
+  "_release": "6423d3d4c9",
+  "_resolution": {
+    "type": "commit",
+    "commit": "6423d3d4c9e09180ad83a9166d149e3e4124320d"
+  },
+  "_source": "https://github.com/cheminfo/SlickGrid.git",
+  "_target": "6423d3d4c9e09180ad83a9166d149e3e4124320d",
+  "_originalSource": "cheminfo/SlickGrid"
+}

@@ -1,0 +1,27 @@
+{
+  "name": "jcampconverter",
+  "version": "7.3.0",
+  "main": [
+    "dist/jcampconverter.js",
+    "dist/jcampconverter.min.js"
+  ],
+  "homepage": "https://github.com/cheminfo-js/jcampconverter",
+  "authors": [
+    "Luc Patiny"
+  ],
+  "description": "Parse and convert JCAMP data",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "jcamp",
+    "converter"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "/*",
+    "!dist/*"
+  ]
+}

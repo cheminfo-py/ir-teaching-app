@@ -1,0 +1,12 @@
+{
+  "name": "onde",
+  "homepage": "https://github.com/cheminfo/onde",
+  "_release": "126c1571a3",
+  "_resolution": {
+    "type": "commit",
+    "commit": "126c1571a3b212abbefb5351ad9b192cef35e7a1"
+  },
+  "_source": "https://github.com/cheminfo/onde.git",
+  "_target": "126c1571a3b212abbefb5351ad9b192cef35e7a1",
+  "_originalSource": "cheminfo/onde"
+}

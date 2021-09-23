@@ -1,0 +1,12 @@
+{
+  "name": "d3-plugins",
+  "homepage": "https://github.com/cheminfo/d3-plugins",
+  "_release": "ea652308c6",
+  "_resolution": {
+    "type": "commit",
+    "commit": "ea652308c616f3accde0a418f7ccc6254a932985"
+  },
+  "_source": "https://github.com/cheminfo/d3-plugins.git",
+  "_target": "ea652308c616f3accde0a418f7ccc6254a932985",
+  "_originalSource": "cheminfo/d3-plugins"
+}

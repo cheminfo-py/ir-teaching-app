@@ -1,0 +1,39 @@
+{
+  "name": "nmr-simulation",
+  "version": "0.2.1",
+  "main": [
+    "dist/nmr-simulation.js"
+  ],
+  "homepage": "https://github.com/cheminfo-js/nmr-simulation#readme",
+  "authors": [
+    "Michaël Zasso"
+  ],
+  "description": "Simulate NMR spectra from spin systems",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "nmr",
+    "simulation",
+    "simulator",
+    "nmr",
+    "spin",
+    "system"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "/*",
+    "!dist/*"
+  ],
+  "_release": "0.2.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.2.1",
+    "commit": "af6182d7b26c835ae22341dd4f81eeed5376e628"
+  },
+  "_source": "https://github.com/cheminfo-js/nmr-simulation.git",
+  "_target": "0.2.1",
+  "_originalSource": "nmr-simulation"
+}

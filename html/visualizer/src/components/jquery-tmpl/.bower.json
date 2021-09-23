@@ -1,0 +1,13 @@
+{
+  "name": "jquery-tmpl",
+  "homepage": "https://github.com/BorisMoore/jquery-tmpl",
+  "_release": "vBeta1.0.0",
+  "_resolution": {
+    "type": "tag",
+    "tag": "vBeta1.0.0",
+    "commit": "484cee912c94ff9bdad87027ac452335ab44dc57"
+  },
+  "_source": "https://github.com/BorisMoore/jquery-tmpl.git",
+  "_target": "vBeta1.0.0",
+  "_originalSource": "BorisMoore/jquery-tmpl"
+}
