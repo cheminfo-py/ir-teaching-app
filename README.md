@@ -11,5 +11,7 @@ If you want to directly expose via HTTP, you can set the `NGNIX_PORT` to `80`, f
 docker-compose up --build -d
 ```
 
+To update the dependencies (which is normally not needed), run `bash update_visualizer.sh`. Note that the `VHCOMMIT` variable must coincide with the commit set in the view.
+
 ## Citation 
 If you find this app useful, please cite 

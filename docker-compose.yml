@@ -12,7 +12,7 @@ services:
       - NGINX_PORT=${NGINX_PORT}
   xtbservice:
     #build: .
-    image: ghcr.io/cheminfo-py/xtb-service:0.1.0a1
+    image: ghcr.io/cheminfo-py/xtb-service:0.2.0
     restart: always
     environment:
       - PORT=${BACKEND_PORT}
