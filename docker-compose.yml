@@ -6,7 +6,7 @@ services:
     volumes:
     - ./ngnix:/etc/nginx/templates
     ports:
-      - 8080:${NGINX_PORT}
+      - ${NGINX_PORT}:${NGINX_PORT}
     environment:
       - NGINX_HOST=ir.cheminfo.org
       - NGINX_PORT=${NGINX_PORT}
