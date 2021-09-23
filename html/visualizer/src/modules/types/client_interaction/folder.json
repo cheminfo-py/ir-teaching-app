@@ -1,0 +1,34 @@
+{
+  "modules": [
+    {
+      "moduleName": "Button",
+      "url": "modules/types/client_interaction/button_action/"
+    },
+    {
+      "moduleName": "Code editor",
+      "url": "modules/types/client_interaction/code_editor/"
+    },
+    {
+      "moduleName": "Code executor",
+      "url": "modules/types/client_interaction/code_executor/"
+    },
+    {
+      "moduleName": "Drag and drop",
+      "url": "modules/types/client_interaction/dragdrop/"
+    },
+    {
+      "moduleName": "Paste value",
+      "url": "modules/types/client_interaction/paste_text/"
+    },
+    {
+      "moduleName": "X Nav",
+      "url": "modules/types/client_interaction/xnavigator/"
+    },
+    {
+      "moduleName": "X-Y-Z Zoom",
+      "url": "modules/types/client_interaction/xyzoomnavigator/"
+    }
+  ],
+  "name": "Client interaction",
+  "folders": []
+}

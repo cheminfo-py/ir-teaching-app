@@ -1,1 +1,2 @@
 # ir-teaching-app
+This repository allows deploying our IR teaching app which is a combination of our [web service](https://github.com/cheminfo-py/xtbservice) and a frontend developed in the [visualizer library](https://github.com/NPellet/visualizer). 

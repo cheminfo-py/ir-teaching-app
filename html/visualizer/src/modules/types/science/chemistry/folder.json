@@ -1,0 +1,22 @@
+{
+  "modules": [
+    {
+      "moduleName": "JSME",
+      "url": "modules/types/science/chemistry/jsme/"
+    },
+    {
+      "moduleName": "JSMol",
+      "url": "modules/types/science/chemistry/jsmol/"
+    },
+    {
+      "moduleName": "OCL Molecule editor",
+      "url": "modules/types/science/chemistry/ocl_editor/"
+    },
+    {
+      "moduleName": "Periodic table",
+      "url": "modules/types/science/chemistry/periodic_table/"
+    }
+  ],
+  "name": "Chemistry",
+  "folders": []
+}
