@@ -1,0 +1,20 @@
+
+version: "3.3"
+services:
+  nginx:
+    build: .
+    volumes:
+    - ./ngnix:/etc/nginx/templates
+    ports:
+      - 8080:${NGINX_PORT}
+    environment:
+      - NGINX_HOST=ir.cheminfo.org
+      - NGINX_PORT=${NGINX_PORT}
+  xtbservice:
+    #build: .
+    image: ghcr.io/cheminfo-py/xtb-service:0.1.0a1
+    restart: always
+    environment:
+      - PORT=${BACKEND_PORT}
+    ports:
+      - ${BACKEND_PORT}:${BACKEND_PORT}

@@ -1,0 +1,3 @@
+server {
+    listen       ${NGINX_PORT};
+}
