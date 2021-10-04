@@ -17,8 +17,6 @@ server {
     location / {
         root /usr/share/nginx/html;
         autoindex on;
-        try_files   $uri $uri/ /index.php?$query_string;
-        proxy_redirect  http://localhost:${IR_NGINX_PORT}/ /;
         proxy_ignore_headers "Set-Cookie";
         proxy_hide_header "Set-Cookie";
         add_header X-Cache-Status $upstream_cache_status;
