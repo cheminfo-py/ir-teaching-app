@@ -1,7 +1,15 @@
 server {
-    listen       ${NGINX_PORT};
+    listen       ${IR_NGINX_PORT};
 
     location / {
         root /usr/share/nginx/html;
+    }
+
+    location /api/ {
+        proxy_pass http://xtbservice:8091/;
+    }
+
+    location /v1/ {
+        proxy_pass http://xtbservice:8091/v1/;
     }
 }
