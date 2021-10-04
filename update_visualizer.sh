@@ -9,7 +9,7 @@ fi
 
 #find replace https://ir.cheminfo.org with http://localhost:8091
 # the -i '' is required on Mac https://stackoverflow.com/questions/25486667/sed-without-backup-file
-sed -i '' -e 's/https:\/\/ir.cheminfo.org/http:\/\/localhost:9000\/api/g' view.json
+sed -i '' -e 's/https:\/\/ir.cheminfo.org/api/g' view.json
 
 # #get the VH commit
 VHCOMMIT=$(grep -o -E -e '\/github/cheminfo-js\/visualizer-helper/[0-9a-f]{40}'  view.json |  sed -e 's/\/.*\///g')
