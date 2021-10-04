@@ -206,5 +206,6 @@ tags
 # Ignore all local history of files
 .history
 .ionide
+ircache/
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,visualstudiocode,vim,python

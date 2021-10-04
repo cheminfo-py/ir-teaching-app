@@ -2,9 +2,10 @@
 version: "3.3"
 services:
   nginx:
-    build: .
+    image: nginx
     volumes:
     - ./ngnix:/etc/nginx/templates
+    - ./html:/usr/share/nginx/html
     ports:
       - ${IR_NGINX_PORT}:${IR_NGINX_PORT}
     environment:

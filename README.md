@@ -29,6 +29,7 @@ docker-compose up --build -d
 
 ## Updating the app (admins only)
 To update the dependencies (which is normally not needed), run `bash update_visualizer.sh` from the root level of this repository. 
+If you find some issues in the installation this is the first thing to fix. 
 
 ## Admin notes 
 
