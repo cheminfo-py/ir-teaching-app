@@ -26,6 +26,9 @@ Then start the [docker-compose](https://docs.docker.com/compose/install/).
 ```
 docker-compose up --build -d
 ```
+### It does not work
+
+- You may need to check that you have the correct permissions to read and write the mounted folders. This can be an issue on security enhanced Linux
 
 ## Updating the app (admins only)
 To update the dependencies (which is normally not needed), run `bash update_visualizer.sh` from the root level of this repository. 
