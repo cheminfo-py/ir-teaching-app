@@ -20,9 +20,12 @@ services:
     restart: always
     environment:
       - PORT=8091
+      - CACHERDIR=ircache
     expose:
       - "8091"
     networks:
       - ir-app
+    volumes:
+      - ./ircache:/ircache
 networks:
   ir-app:
