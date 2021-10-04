@@ -1,0 +1,1 @@
+'use strict';define(["modules/default/defaultmodel","src/util/datatraversing"],function(a,b){"use strict";function c(){}return $.extend(!0,c.prototype,a,{getjPath:function(a){var c=[];return"results"===a&&b.getJPathsFromElement(this.module.model._data,c),c}}),c});

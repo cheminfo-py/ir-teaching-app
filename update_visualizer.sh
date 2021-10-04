@@ -15,19 +15,12 @@ sed -i '' -e 's/https:\/\/ir.cheminfo.org/http:\/\/localhost:9000\/api/g' view.j
 VHCOMMIT=$(grep -o -E -e '\/github/cheminfo-js\/visualizer-helper/[0-9a-f]{40}'  view.json |  sed -e 's/\/.*\///g')
 
 # move the view 
-mv view.json html/visualizer/10b6a7229db7dd815afcc75e77c2d6cd.view.json
+mv view.json html/visualizer/view.json
 
 # update visualizer and install dependencies
-cd html/visualizer  && rm -rf visualizer && rm -rf src && mkdir src
+cd html/visualizer  && rm -rf visualizer && rm -rf src 
 wget https://github.com/NPellet/visualizer/archive/refs/heads/master.zip && unzip master.zip
-cd visualizer-master && npm i --force  && npm run build && cd ..
-mv visualizer-master/build src
+cd visualizer-master && npm i --force  && npm run postinstall && npm run build && cd ..
+mv visualizer-master/build src && cp src/browserified build 
 rm -rf visualizer-master && rm master.zip
 cd .. 
-
-# update helper (https://github.com/cheminfo-js/visualizer-helper) and build it! 
-rm -rf github
-wget https://github.com/cheminfo-js/visualizer-helper/archive/${VHCOMMIT}.zip && unzip ${VHCOMMIT}.zip
-mv visualizer-helper-${VHCOMMIT} helper && rm ${VHCOMMIT}.zip
-cd helper && npm i && npm run babel-test && cd ..
-mkdir -p github/cheminfo-js/visualizer-helper && mv  helper/build github/cheminfo-js/visualizer-helper/${VHCOMMIT}
