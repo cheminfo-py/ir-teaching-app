@@ -1,7 +1,1 @@
-'use strict';
-
-define(['katex', 'quill'], function (katex, Quill, ImageResize) {
-  window.katex = katex; // Needed for quill formula to work :(
-  window.Quill = Quill;
-  return Quill;
-});
+'use strict';define(["katex","quill"],function(a,b){"use strict";return window.katex=a,window.Quill=b,b});

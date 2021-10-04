@@ -6,15 +6,23 @@ services:
     volumes:
     - ./ngnix:/etc/nginx/templates
     ports:
-      - ${NGINX_PORT}:${NGINX_PORT}
+      - ${IR_NGINX_PORT}:${IR_NGINX_PORT}
     environment:
       - NGINX_HOST=ir.cheminfo.org
-      - NGINX_PORT=${NGINX_PORT}
+      - IR_NGINX_PORT=${IR_NGINX_PORT}
+    networks:
+      - ir-app
+    depends_on:
+      - xtbservice
   xtbservice:
     #build: .
-    image: ghcr.io/cheminfo-py/xtb-service:0.2.0
+    image: ghcr.io/cheminfo-py/xtb-service:0.3.0
     restart: always
     environment:
-      - PORT=${BACKEND_PORT}
-    ports:
-      - ${BACKEND_PORT}:${BACKEND_PORT}
+      - PORT=8091
+    expose:
+      - "8091"
+    networks:
+      - ir-app
+networks:
+  ir-app:

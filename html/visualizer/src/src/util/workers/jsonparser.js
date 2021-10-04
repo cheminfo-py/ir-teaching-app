@@ -1,7 +1,1 @@
-
-onmessage = function(event) {
-	
-	var message = event.data.message;
-	event.data.message = JSON.parse(message);
-	postMessage(event.data);
-}
+"use strict";onmessage=function(a){var b=a.data.message;a.data.message=JSON.parse(b),postMessage(a.data)};

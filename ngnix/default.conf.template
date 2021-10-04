@@ -1,7 +1,64 @@
+proxy_cache_path /cache levels=1:2 keys_zone=global_cache:100m max_size=250g inactive=100y use_temp_path=off;
+
+
 server {
-    listen       ${NGINX_PORT};
+    listen       ${IR_NGINX_PORT};
+
+    location /github/ {
+        proxy_cache_valid any 100y;
+        proxy_ssl_server_name on;
+        proxy_pass https://www.lactame.com/github/;
+        proxy_cache global_cache;
+        proxy_ignore_headers "Set-Cookie";
+        proxy_hide_header "Set-Cookie";
+        add_header X-Cache-Status $upstream_cache_status;
+    }
 
     location / {
         root /usr/share/nginx/html;
+        autoindex on;
+        try_files   $uri $uri/ /index.php?$query_string;
+        proxy_redirect  http://localhost:${IR_NGINX_PORT}/ /;
+        proxy_ignore_headers "Set-Cookie";
+        proxy_hide_header "Set-Cookie";
+        add_header X-Cache-Status $upstream_cache_status;
+        proxy_ssl_server_name on;
     }
+
+    location /api/ {
+        proxy_pass http://xtbservice:8091/;
+        proxy_redirect  http://xtbservice:8080/ /api/;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Host $host;
+        proxy_set_header content-type "application/json";
+        proxy_cache_bypass $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+    }
+
+    location /v1/ {
+        proxy_pass http://xtbservice:8091/v1/;
+    }
+
+    location /lib/ {
+        proxy_cache_valid any 100y;
+        proxy_ssl_server_name on;
+        proxy_pass https://www.lactame.com/lib/;
+        proxy_cache global_cache;
+        proxy_ignore_headers "Set-Cookie";
+        proxy_hide_header "Set-Cookie";
+        add_header X-Cache-Status $upstream_cache_status;
+    }
+
+    location /docs/ {
+        proxy_cache_valid any 100y;
+        proxy_ssl_server_name on;
+        proxy_pass https://www.lactame.com/docs/;
+        proxy_cache global_cache;
+        proxy_ignore_headers "Set-Cookie";
+        proxy_hide_header "Set-Cookie";
+        add_header X-Cache-Status $upstream_cache_status;
+    }
+
+
 }

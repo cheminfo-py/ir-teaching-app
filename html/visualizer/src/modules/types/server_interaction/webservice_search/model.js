@@ -1,17 +1,1 @@
-'use strict';
-
-define(['modules/default/defaultmodel', 'src/util/datatraversing'], function (Default, Traversing) {
-  function Model() {
-  }
-
-  $.extend(true, Model.prototype, Default, {
-    getjPath: function (rel) {
-      var jpath = [];
-      if (rel === 'results')
-        Traversing.getJPathsFromElement(this.module.model._data, jpath);
-      return jpath;
-    }
-  });
-
-  return Model;
-});
+'use strict';define(["modules/default/defaultmodel","src/util/datatraversing"],function(a,b){"use strict";function c(){}return $.extend(!0,c.prototype,a,{getjPath:function(a){var c=[];return"results"===a&&b.getJPathsFromElement(this.module.model._data,c),c}}),c});

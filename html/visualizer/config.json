@@ -1,5 +1,7 @@
 {
-  "lockView": true,
-  "debugLevel": -1,
-  "contextMenu": []
+  "lockView": false,
+  "debugLevel": 3,
+  "modules": {
+    "folders": ["modules/types"]
+  }
 }

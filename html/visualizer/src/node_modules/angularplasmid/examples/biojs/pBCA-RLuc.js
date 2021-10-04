@@ -1,1 +1,0 @@
-var plasmid = require("angularplasmid");

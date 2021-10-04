@@ -1,14 +1,1 @@
-'use strict';
-
-define(['modules/default/defaultmodel'], function (Default) {
-  function Model() {
-  }
-
-  Model.prototype = $.extend(true, {}, Default, {
-    getjPath: function () {
-      return [];
-    }
-  });
-
-  return Model;
-});
+'use strict';define(["modules/default/defaultmodel"],function(a){"use strict";function b(){}return b.prototype=$.extend(!0,{},a,{getjPath:function(){return[]}}),b});

@@ -1,5 +1,1 @@
-
-onMessage = function(event) {
-	postMessage(event.data[1](event.data[0]));
-}
-
+"use strict";onMessage=function(a){postMessage(a.data[1](a.data[0]))};

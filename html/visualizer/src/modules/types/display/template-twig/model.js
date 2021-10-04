@@ -1,10 +1,1 @@
-'use strict';
-
-define(['jquery', 'modules/default/defaultmodel'], function ($, Default) {
-  function Model() {
-  }
-
-  $.extend(true, Model.prototype, Default);
-
-  return Model;
-});
+'use strict';define(["jquery","modules/default/defaultmodel"],function(a,b){"use strict";function c(){}return a.extend(!0,c.prototype,b),c});
