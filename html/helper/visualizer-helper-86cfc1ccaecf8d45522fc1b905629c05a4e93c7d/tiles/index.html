@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <script src="./data.js"></script>
+    <script src="./TilesManager.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link rel="stylesheet" type="text/css" href="./font-awesome/css/all.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://www.lactame.com/lib/cheminfo-font/0.26.0/style.css"
+    />
+  </head>
+  <body>
+    <div id="tilesDiv" style="width: 100%; height: 100%;"></div>
+  </body>
+
+  <script>
+    const options = {
+      shouldRender: (tile) => {
+        if (tile.hide) return false;
+        return true;
+      },
+      ribbon: (tile) => {
+        if (tile.rights) {
+          return 'LIMITED';
+        } else if (tile.date) {
+          const d = new Date(tile.date);
+          if (new Date() - d < 1296000000) {
+            return 'NEW';
+          }
+        }
+        return '';
+      },
+      isActive: (tile) => {
+        if (tile.kind === 'sample') return false;
+        return true;
+      },
+      isLink: (tile) => true,
+      icon: (tile) => tile.icon,
+      title: (tile) => {
+        console.log('TITLE');
+        return tile.title
+          ? typeof tile.title === 'function'
+            ? tile.title()
+            : tile.title
+          : tile.icon;
+      },
+      backgroundColor: (tile) => String(tile.bgcolor),
+      color: (tile) => tile.fontcolor || 'black',
+      header: (tile) => tile.description,
+      footer: (tile) => tile.id,
+      onTileClick: (event, tile) => {
+        console.log({ event, tile });
+      },
+    };
+
+    // TEMPORARY HTTPS://GOO.GL/MAPS/71MNJA5ZL2S2 to FLATTEN ALL tILES
+    let flatTiles = [];
+    for (let tileSet of tiles) {
+      flatTiles.push(...tileSet.tiles);
+    }
+
+    let tilesManager = new TilesManager('tilesDiv', flatTiles, options);
+    tilesManager.repaint();
+  </script>
+</html>

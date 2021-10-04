@@ -1,0 +1,108 @@
+.on-tabs-tiles {
+  display: inline-flex;
+  flex-wrap: wrap;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.on-tabs-tiles .cell {
+  position: relative;
+  border: 2px solid white;
+}
+
+.on-tabs-tiles .cell.inactive {
+  opacity: 0.5;
+}
+
+.on-tabs-tiles .cell div {
+  text-align: center;
+}
+
+.on-tabs-tiles .content {
+  width: 120px;
+  height: 120px;
+  display: inline-flex;
+  font-size: 0.8em;
+}
+.on-tabs-tiles .hide {
+  background-color: rgba(255, 255, 255, 0.6);
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+/*
+.on-tabs-tiles .fa, .ci-icon {
+    font-size: 8em;
+    
+}
+*/
+
+.on-tabs-tiles .cell .main {
+  margin: auto;
+}
+
+.on-tabs-tiles .cell .huge {
+  font-size: 6em;
+}
+
+.on-tabs-tiles .cell .large {
+  font-size: 4em;
+}
+
+.on-tabs-tiles .cell .medium {
+  font-size: 2em;
+}
+
+.on-tabs-tiles .cell .title {
+  font-weight: bold;
+  margin: auto;
+}
+
+.on-tabs-tiles .cell .header {
+  position: absolute;
+  font-size: 1.4em;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  z-index: 100;
+  margin-top: 4px;
+}
+.on-tabs-tiles .footer {
+  position: absolute;
+  bottom: 0em;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  /* white-space: pre; */
+  font-size: 10px;
+  /*overflow: hidden;*/
+  margin-bottom: 4px;
+}
+
+.on-tabs-tiles .ribbon-wrapper {
+  width: 75px;
+  height: 75px;
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.on-tabs-tiles .ribbon {
+  font: bold 1em Sans-Serif;
+  color: white;
+  text-align: center;
+  transform: rotate(45deg);
+  position: relative;
+  padding: 3px 0px 0px 0px;
+  left: 0px;
+  top: 10px;
+  width: 120px;
+  background-color: rgba(255, 0, 0, 0.9);
+  z-index: 10;
+}
+.on-tabs-tiles .ribbon.beta {
+  background-color: rgba(0, 0, 255, 0.9);
+}

@@ -1,5 +1,5 @@
 {
-  "lockView": true,
-  "debugLevel": -1,
+  "lockView": false,
+  "debugLevel": 3,
   "contextMenu": []
 }
