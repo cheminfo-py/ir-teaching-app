@@ -28,5 +28,7 @@ services:
       - ir-app
     volumes:
       - ./ircache:/ircache
+    security_opt:
+      - seccomp:unconfined
 networks:
   ir-app:
