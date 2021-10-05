@@ -17,7 +17,7 @@ services:
       - xtbservice
   xtbservice:
     #build: .
-    image: ghcr.io/cheminfo-py/xtb-service:0.3.1
+    image: ghcr.io/cheminfo-py/xtb-service:0.3.2
     restart: always
     environment:
       - PORT=8091
