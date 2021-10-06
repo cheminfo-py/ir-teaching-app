@@ -1,11 +1,11 @@
 /*!
- * EventEmitter v5.2.8 - git.io/ee
+ * EventEmitter v5.1.0 - git.io/ee
  * Unlicense - http://unlicense.org/
- * Oliver Caldwell - https://oli.me.uk/
+ * Oliver Caldwell - http://oli.me.uk/
  * @preserve
  */
 
-;(function (exports) {
+;(function () {
     'use strict';
 
     /**
@@ -18,6 +18,7 @@
 
     // Shortcuts to improve speed and size
     var proto = EventEmitter.prototype;
+    var exports = this;
     var originalGlobalValue = exports.EventEmitter;
 
     /**
@@ -118,16 +119,6 @@
         return response || listeners;
     };
 
-    function isValidListener (listener) {
-        if (typeof listener === 'function' || listener instanceof RegExp) {
-            return true
-        } else if (listener && typeof listener === 'object') {
-            return isValidListener(listener.listener)
-        } else {
-            return false
-        }
-    }
-
     /**
      * Adds a listener function to the specified event.
      * The listener will not be added if it is a duplicate.
@@ -139,10 +130,6 @@
      * @return {Object} Current instance of EventEmitter for chaining.
      */
     proto.addListener = function addListener(evt, listener) {
-        if (!isValidListener(listener)) {
-            throw new TypeError('listener must be a function');
-        }
-
         var listeners = this.getListenersAsObject(evt);
         var listenerIsWrapped = typeof listener === 'object';
         var key;
@@ -242,7 +229,7 @@
 
     /**
      * Adds listeners in bulk using the manipulateListeners method.
-     * If you pass an object as the first argument you can add to multiple events at once. The object should contain key value pairs of events and listeners or listener arrays. You can also pass it an event name and an array of listeners to be added.
+     * If you pass an object as the second argument you can add to multiple events at once. The object should contain key value pairs of events and listeners or listener arrays. You can also pass it an event name and an array of listeners to be added.
      * You can also pass it a regular expression to add the array of listeners to all events that match it.
      * Yeah, this function does quite a bit. That's probably a bad thing.
      *
@@ -257,7 +244,7 @@
 
     /**
      * Removes listeners in bulk using the manipulateListeners method.
-     * If you pass an object as the first argument you can remove from multiple events at once. The object should contain key value pairs of events and listeners or listener arrays.
+     * If you pass an object as the second argument you can remove from multiple events at once. The object should contain key value pairs of events and listeners or listener arrays.
      * You can also pass it an event name and an array of listeners to be removed.
      * You can also pass it a regular expression to remove the listeners from all events that match it.
      *
@@ -483,4 +470,4 @@
     else {
         exports.EventEmitter = EventEmitter;
     }
-}(typeof window !== 'undefined' ? window : this || {}));
+}.call(this));

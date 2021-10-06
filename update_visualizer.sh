@@ -12,15 +12,12 @@ fi
 sed -i '' -e 's/https:\/\/ir.cheminfo.org/api/g' view.json
 
 # #get the VH commit
-VHCOMMIT=$(grep -o -E -e '\/github/cheminfo-js\/visualizer-helper/[0-9a-f]{40}'  view.json |  sed -e 's/\/.*\///g')
+VVERSION=$(jq ".version" view.json | tr -d \")
 
 # move the view 
 mv view.json html/visualizer/view.json
 
 # update visualizer and install dependencies
-cd html/visualizer  && rm -rf visualizer && rm -rf src 
-wget https://github.com/NPellet/visualizer/archive/refs/heads/master.zip && unzip master.zip
-cd visualizer-master && npm i --force  && npm run postinstall && npm run build && cd ..
-mv visualizer-master/build src && cp src/browserified build 
-rm -rf visualizer-master && rm master.zip
-cd .. 
+cd html/visualizer  && rm -rf visualizer && rm -rf src && mkdir src && cd src 
+curl https://www.lactame.com/visualizer/v$VVERSION.tar.gz -o src.tar.gz 
+tar -xf src.tar.gz && rm src.tar.gz
