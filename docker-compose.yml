@@ -17,11 +17,13 @@ services:
       - xtbservice
   xtbservice:
     #build: .
-    image: ghcr.io/cheminfo-py/xtb-service:0.3.2
+    image: ghcr.io/cheminfo-py/xtb-service:0.3.5
     restart: always
     environment:
       - PORT=8091
       - CACHERDIR=ircache
+      - OMP_NUM_THREADS=8,1
+      - WORKERS=1
     expose:
       - "8091"
     networks:
