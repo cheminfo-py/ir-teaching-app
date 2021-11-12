@@ -17,13 +17,15 @@ services:
       - xtbservice
   xtbservice:
     #build: .
-    image: ghcr.io/cheminfo-py/xtb-service:0.3.5
+    image: ghcr.io/cheminfo-py/xtb-service:0.3.8
     restart: always
     environment:
       - PORT=8091
       - CACHERDIR=ircache
       - OMP_NUM_THREADS=8,1
       - WORKERS=1
+      - MAX_ATOMS=50
+      - TIMEOUT=60
     expose:
       - "8091"
     networks:
@@ -32,5 +34,11 @@ services:
       - ./ircache:/ircache
     security_opt:
       - seccomp:unconfined
+    deploy:
+      resources:
+        limits:
+          cpus: '4'
+        reservations:
+          cpus: '4'
 networks:
   ir-app:
